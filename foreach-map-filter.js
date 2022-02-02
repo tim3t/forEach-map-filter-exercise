@@ -73,7 +73,21 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str){
-   
+    const vowels = "aeiou";
+    let result = {};
+    let strArr = str.split("");
+    
+    strArr.forEach(function(letter){
+        let lowercase = letter.toLowerCase()
+        if (vowels.indexOf(lowercase) !== -1){
+            if (result[lowercase]) {
+                result[lowercase]++;
+            } else {
+            result[lowercase] = 1;
+            }
+        }
+    });
+return result;
 }
 
 /*
